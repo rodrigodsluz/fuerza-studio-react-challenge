@@ -1,7 +1,25 @@
-import React from "react"
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-function App(){
-    return <h1>Fuerza Test</h1>
+import Home from './pages/Home';
+import GlobalStyle from './styles/GlobalStyle';
+import theme from './styles/theme';
+
+/**
+ * @export
+ * @component
+ * @name App
+ *
+ * @description
+ * App component
+ */
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Home />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
