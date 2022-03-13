@@ -46,7 +46,7 @@ function AuthContextProvider({ children }: IAuthContextProvider) {
     return false;
   };
 
-  const signout = () => {
+  const signOut = () => {
     sessionStorage.removeItem('tokenNocturnal');
     sessionStorage.removeItem('userNocturnal');
 
@@ -95,7 +95,7 @@ function AuthContextProvider({ children }: IAuthContextProvider) {
         isAuthenticated,
         authenticate,
         user,
-        signout,
+        signOut,
       }}
     >
       {children}

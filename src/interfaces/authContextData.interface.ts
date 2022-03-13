@@ -13,5 +13,5 @@ export interface IAuthContextData {
   isAuthenticated: boolean;
   authenticate: (username: string, password: string) => Promise<boolean>;
   user: AuthContextUser;
-  signout: () => void;
+  signOut: () => void;
 }

@@ -17,6 +17,8 @@ function PrivateRoutes() {
       <Route path="*" element={<Navigate replace to="/journals" />} />
       <Route path="/journals">
         <Route index element={<JournalsPage />} />
+        <Route path="/journals/:journalId" element={<JournalsPage />} />
+        <Route path="/journals/new" element={<JournalsPage />} />
       </Route>
     </Routes>
   );
