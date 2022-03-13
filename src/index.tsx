@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
 import { setupServer } from './services/mirage/server';
+
+import App from './App';
 
 if (process.env.NODE_ENV === 'development') {
   setupServer();

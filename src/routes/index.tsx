@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-///import PrivateRoutes from './PrivateRoutes';
+import { useAuth } from '../hooks';
+
+import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 
 /**
@@ -12,12 +14,14 @@ import PublicRoutes from './PublicRoutes';
  * @description
  * Routes
  */
-const Routes = () => {
+function Routes() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <BrowserRouter>
-      <PublicRoutes />
+      {isAuthenticated ? <PrivateRoutes /> : <PublicRoutes />}
     </BrowserRouter>
   );
-};
+}
 
 export default Routes;

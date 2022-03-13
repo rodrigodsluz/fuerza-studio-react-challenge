@@ -1,7 +1,13 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { ToastContainer } from 'react-toastify';
 
 import Routes from './routes';
+
+import { AuthContextProvider } from './context/AuthContext';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 import GlobalStyle from './styles/GlobalStyle';
 import theme from './styles/theme';
 
@@ -15,10 +21,23 @@ import theme from './styles/theme';
  */
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Routes />
-    </ThemeProvider>
+    <AuthContextProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Routes />
+        <ToastContainer
+          autoClose={3000}
+          position="top-right"
+          newestOnTop={false}
+          hideProgressBar={false}
+          draggable={false}
+          pauseOnHover
+          rtl={false}
+          pauseOnFocusLoss={false}
+          closeOnClick
+        />
+      </ThemeProvider>
+    </AuthContextProvider>
   );
 }
 

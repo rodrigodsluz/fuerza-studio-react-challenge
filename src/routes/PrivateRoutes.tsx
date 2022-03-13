@@ -11,7 +11,7 @@ import JournalsPage from '../pages/Journals';
  * @description
  * Private Routes
  */
-export default function PrivateRoutes() {
+function PrivateRoutes() {
   return (
     <Routes>
       <Route path="*" element={<Navigate replace to="/journals" />} />
@@ -21,3 +21,5 @@ export default function PrivateRoutes() {
     </Routes>
   );
 }
+
+export default PrivateRoutes;

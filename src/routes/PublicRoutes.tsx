@@ -12,7 +12,7 @@ import SignUpPage from '../pages/SignUp';
  * @description
  * Public Routes
  */
-export default function PublicRoutes() {
+function PublicRoutes() {
   return (
     <Routes>
       <Route path="*" element={<Navigate replace to="/signin" />} />
@@ -21,3 +21,5 @@ export default function PublicRoutes() {
     </Routes>
   );
 }
+
+export default PublicRoutes;
