@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import JournalsPage from '../pages/Journals';
+import { Journals, CreateJournal, JournalsList } from '../pages';
 
 /**
  * @export
@@ -16,9 +16,9 @@ function PrivateRoutes() {
     <Routes>
       <Route path="*" element={<Navigate replace to="/journals" />} />
       <Route path="/journals">
-        <Route index element={<JournalsPage />} />
-        <Route path="/journals/:journalId" element={<JournalsPage />} />
-        <Route path="/journals/new" element={<JournalsPage />} />
+        <Route index element={<Journals />} />
+        <Route path="/journals/:journalId" element={<JournalsList />} />
+        <Route path="/journals/new" element={<CreateJournal />} />
       </Route>
     </Routes>
   );

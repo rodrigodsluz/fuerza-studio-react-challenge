@@ -20,6 +20,8 @@ export const StyledButton = styled.button<{
     font-weight: 600;
     color: ${theme.colors.white};
 
+    gap: 5px;
+
     &:hover {
       filter: brightness(90%);
     }

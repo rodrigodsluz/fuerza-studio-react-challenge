@@ -1,8 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import SignInPage from '../pages/SignIn';
-import SignUpPage from '../pages/SignUp';
+import { SignIn, SignUp } from '../pages';
 
 /**
  * @export
@@ -16,8 +15,8 @@ function PublicRoutes() {
   return (
     <Routes>
       <Route path="*" element={<Navigate replace to="/signin" />} />
-      <Route path="/signin" element={<SignInPage />} />
-      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
 }

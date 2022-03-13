@@ -18,6 +18,11 @@ export const Container = styled.main`
     text-align: center;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   @media (min-width: 720px) {
     h1 {
       text-align: left;
@@ -129,8 +134,6 @@ export const List = styled.ul`
       gap: 2rem;
 
       justify-content: center;
-
-      background: rgba(255, 255, 255, 0.425);
     }
   `}
 `;

@@ -6,3 +6,4 @@ export * from './authContextProvider.interface';
 export * from './button.interface';
 export * from './form.interface';
 export * from './input.interface';
+export * from './navbar.interface';

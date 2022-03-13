@@ -34,7 +34,9 @@ function SignUpPage() {
       toast.success('Congrats! Your account has been created!');
       navigate('/');
     } else {
-      toast.error('Oops, a user with that username already exists!');
+      toast.error(
+        'Oops, an error occurred or a user with that username already exists!'
+      );
     }
   };
 

@@ -18,12 +18,12 @@ import { Container, EmptyList, List } from './styles';
 /**
  * @export
  * @component
- * @name JournalList
+ * @name JournalsPage
  *
  * @description
- * JournalList
+ * JournalSPage
  */
-function JournalList() {
+function JournalsPage() {
   const [journals, setJournals] = useState<Journal[]>();
 
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function JournalList() {
   const { user, signOut } = useAuth();
 
   const handleAddJournal = () => {
-    navigate('/new/journal');
+    navigate('/journals/new');
   };
 
   const getJournals = useCallback(() => {
@@ -93,4 +93,4 @@ function JournalList() {
   );
 }
 
-export default JournalList;
+export default JournalsPage;
