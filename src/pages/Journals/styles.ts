@@ -10,14 +10,6 @@ export const Container = styled.main`
   max-width: 720px;
   height: 0;
 
-  h1 {
-    width: 100%;
-
-    margin: 2rem 0;
-
-    text-align: center;
-  }
-
   a {
     color: inherit;
     text-decoration: none;
@@ -70,7 +62,6 @@ export const List = styled.ul`
 
     max-height: 550px;
 
-    overflow: auto;
     list-style-type: none;
 
     border-radius: 8px;

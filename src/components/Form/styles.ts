@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.main`
   ${({ theme }) => css`
@@ -22,6 +21,23 @@ export const Container = styled.main`
       }
     }
 
+    > a:nth-child(3) {
+      grid-area: link;
+
+      margin: auto auto 8px;
+
+      font-size: 1rem;
+      font-weight: 600;
+
+      text-decoration: underline;
+
+      color: ${theme.colors.brown};
+
+      text-align: right;
+
+      cursor: pointer;
+    }
+
     h1 {
       grid-area: title;
 
@@ -29,6 +45,8 @@ export const Container = styled.main`
       font-size: 2.4rem;
 
       color: ${theme.colors.brown};
+
+      white-space: nowrap;
     }
   `}
 `;
@@ -56,27 +74,5 @@ export const StyledForm = styled.form`
 
       margin-top: 2rem;
     }
-  `}
-`;
-
-export const StyledLink = styled(Link)<{
-  isLink?: boolean;
-}>`
-  ${({ theme, isLink }) => css`
-    ${isLink &&
-    css`
-      grid-area: link;
-
-      margin: auto auto 8px;
-
-      font-size: 1rem;
-      font-weight: 600;
-
-      text-decoration: underline;
-
-      color: ${theme.colors.brown};
-
-      cursor: pointer;
-    `}
   `}
 `;

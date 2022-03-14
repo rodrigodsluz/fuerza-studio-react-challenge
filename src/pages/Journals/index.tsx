@@ -67,7 +67,6 @@ function JournalsPage() {
       <Container>
         {journals?.length ? (
           <>
-            <h1>Your Journals</h1>
             <List>
               {journals?.map((journal) => (
                 <Link to={`/journals/${journal.id}`} key={journal.id}>

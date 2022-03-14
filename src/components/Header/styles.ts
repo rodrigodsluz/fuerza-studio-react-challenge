@@ -24,5 +24,7 @@ export const Content = styled.div`
     max-width: 160px;
 
     margin-left: auto;
+
+    margin-top: -10px;
   }
 `;

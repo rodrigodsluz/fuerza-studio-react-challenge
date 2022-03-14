@@ -23,12 +23,12 @@ type NoteListParams = {
 /**
  * @export
  * @component
- * @name JournalsList
+ * @name NotesList
  *
  * @description
- * JournalsList
+ * NotesList
  */
-function JournalsList() {
+function NotesList() {
   const [journal, setJournal] = useState<Journal>();
   const [entries, setEntries] = useState<Entry[]>();
 
@@ -127,4 +127,4 @@ function JournalsList() {
   );
 }
 
-export default JournalsList;
+export default NotesList;

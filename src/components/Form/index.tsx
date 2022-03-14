@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Button, Input } from '../../components';
 
@@ -7,7 +8,7 @@ import logoImg from '../../assets/images/logo.svg';
 
 import { IForm } from '../../interfaces';
 
-import { Container, StyledForm, StyledLink } from './styles';
+import { Container, StyledForm } from './styles';
 
 /**
  * @export
@@ -39,15 +40,13 @@ function Form({
     <Redirect to="/journals" />
   ) : (
     <Container>
-      <StyledLink to="/">
+      <Link to="/">
         <img src={logoImg} alt="Nocturnal logo" />
-      </StyledLink>
+      </Link>
 
       <h1>{title}</h1>
 
-      <StyledLink isLink to={linkButtonPath}>
-        {linkButtonLabel}
-      </StyledLink>
+      <Link to={linkButtonPath}>{linkButtonLabel}</Link>
 
       <StyledForm onSubmit={handleOnSubmitForm}>
         <Input
@@ -64,7 +63,7 @@ function Form({
           label={passwordLabel}
         />
 
-        {hasForgotPassword && <StyledLink to="/">Forgot Password?</StyledLink>}
+        {hasForgotPassword && <Link to="/">Forgot Password?</Link>}
 
         {hasOptionalEmail && (
           <Input

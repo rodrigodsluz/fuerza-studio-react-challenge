@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { Redirect, useHistory, useParams } from 'react-router';
 import { toast } from 'react-toastify';
 
@@ -78,8 +84,7 @@ function CreateNote() {
     }
   };
 
-  // eslint-disable-next-line
-  const getJournals = () => {
+  const getJournals = useCallback(() => {
     http.get(`/journals/${user.id}`).then((response: any) => {
       if (!response) {
         toast.error(
@@ -99,6 +104,7 @@ function CreateNote() {
             setNoteName(entry.title);
             setContent(entry.content);
           } else {
+            // eslint-disable-next-line
             updateIdQuery = null;
           }
         });
@@ -110,7 +116,7 @@ function CreateNote() {
         )[0] || null
       );
     });
-  };
+  }, []);
 
   useEffect(() => {
     getJournals();

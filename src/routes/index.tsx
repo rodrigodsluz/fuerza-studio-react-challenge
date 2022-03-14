@@ -4,10 +4,11 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import {
   CreateJournal,
   CreateNote,
-  JournalsList,
+  NotesList,
   SignIn,
   SignUp,
   Journals,
+  NoteContent,
 } from '../pages';
 
 import PrivateRoute from './PrivateRoutes';
@@ -34,11 +35,16 @@ function Routes() {
 
         <PrivateRoute
           exact
-          component={JournalsList}
+          component={NotesList}
           path="/journals/:journalId/"
         />
 
         <PrivateRoute path="/note/new/:journalId" component={CreateNote} />
+
+        <PrivateRoute
+          path="/journals/:journalId/:noteId"
+          component={NoteContent}
+        />
       </Switch>
     </BrowserRouter>
   );
