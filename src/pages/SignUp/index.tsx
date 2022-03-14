@@ -1,5 +1,5 @@
 import React, { FormEvent } from 'react';
-import { useNavigate } from 'react-router';
+import { useHistory } from 'react-router';
 import { toast } from 'react-toastify';
 
 import { useAuth, useFormFields } from '../../hooks';
@@ -21,7 +21,7 @@ function SignUpPage() {
 
   const { isAuthenticated, newAccount } = useAuth();
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const handleOnSubmitForm = async (e: FormEvent) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ function SignUpPage() {
 
     if (await newAccount(username, password, email)) {
       toast.success('Congrats! Your account has been created!');
-      navigate('/');
+      history.push('/');
     } else {
       toast.error(
         'Oops, an error occurred or a user with that username already exists!'

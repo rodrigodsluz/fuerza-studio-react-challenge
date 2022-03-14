@@ -1,27 +1,20 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Redirect, Route, RouteProps } from 'react-router';
 
-import { Journals, CreateJournal, JournalsList } from '../pages';
+import { useAuth } from '../hooks';
 
 /**
  * @export
  * @component
- * @name PrivateRoutes
+ * @name PrivateRoute
  *
  * @description
- * Private Routes
+ * PrivateRoute
  */
-function PrivateRoutes() {
-  return (
-    <Routes>
-      <Route path="*" element={<Navigate replace to="/journals" />} />
-      <Route path="/journals">
-        <Route index element={<Journals />} />
-        <Route path="/journals/:journalId" element={<JournalsList />} />
-        <Route path="/journals/new" element={<CreateJournal />} />
-      </Route>
-    </Routes>
-  );
+function PrivateRoute({ ...rest }: RouteProps) {
+  const { isAuthenticated } = useAuth();
+
+  return isAuthenticated ? <Route {...rest} /> : <Redirect to="/" />;
 }
 
-export default PrivateRoutes;
+export default PrivateRoute;

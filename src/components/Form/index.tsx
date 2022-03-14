@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import { Button, Input } from '../../components';
 
@@ -36,7 +36,7 @@ function Form({
   hasOptionalEmail,
 }: IForm) {
   return isAuthenticated ? (
-    <Navigate to="/journals" />
+    <Redirect to="/journals" />
   ) : (
     <Container>
       <StyledLink to="/">

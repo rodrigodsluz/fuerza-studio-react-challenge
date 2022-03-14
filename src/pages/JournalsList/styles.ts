@@ -11,6 +11,11 @@ export const Container = styled.main`
   height: 0;
 
   gap: 1.5rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export const EmptyList = styled.div`

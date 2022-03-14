@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaAngleLeft, FaPlus } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Button from '../Button';
 
@@ -22,10 +22,10 @@ function Navbar({
   linkToAddButton,
   disableButton = false,
 }: NavbarProps) {
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const handleAddNote = () => {
-    navigate(linkToAddButton || '');
+    history.push(linkToAddButton || '');
   };
 
   return (

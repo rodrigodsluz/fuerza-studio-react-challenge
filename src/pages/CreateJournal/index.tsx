@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { useNavigate } from 'react-router';
+import { useHistory } from 'react-router';
 import { toast } from 'react-toastify';
 
 import { Button, Header } from '../../components';
@@ -25,12 +25,14 @@ import { Container } from './styles';
  *
  * @description
  * CreateJournal
- */ function CreateJournal() {
+ */
+
+function CreateJournal() {
   const [journalName, setJournalName] = useState('');
 
   const { user, signOut } = useAuth();
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   let updateIdQuery = useQuery().get('updateId');
 
@@ -76,7 +78,7 @@ import { Container } from './styles';
         return null;
       }
 
-      navigate('/journals');
+      history.push('/journals');
     } else {
       const response = await http.put(`/journals/${updateIdQuery}`, {
         userId: user.id,
@@ -89,7 +91,7 @@ import { Container } from './styles';
         return null;
       }
 
-      navigate('/journals');
+      history.push('/journals');
     }
   };
 

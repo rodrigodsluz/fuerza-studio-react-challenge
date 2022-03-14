@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router';
+import { Redirect, useHistory, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaEdit } from 'react-icons/fa';
@@ -36,10 +36,10 @@ function JournalsList() {
 
   const { user, signOut } = useAuth();
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const handleEditJournal = () => {
-    navigate(`/journals/new/${journalId}?updateId=${journalId}`);
+    history.push(`/journals/new/${journalId}?updateId=${journalId}`);
   };
 
   const getJournals = useCallback(() => {
@@ -113,7 +113,7 @@ function JournalsList() {
             </EmptyList>
           )
         ) : (
-          <Navigate to="/journals" />
+          <Redirect to="/journals" />
         )}
       </Container>
 

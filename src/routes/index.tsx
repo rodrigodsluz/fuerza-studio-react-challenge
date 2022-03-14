@@ -1,10 +1,16 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { useAuth } from '../hooks';
+import {
+  CreateJournal,
+  CreateNote,
+  JournalsList,
+  SignIn,
+  SignUp,
+  Journals,
+} from '../pages';
 
-import PrivateRoutes from './PrivateRoutes';
-import PublicRoutes from './PublicRoutes';
+import PrivateRoute from './PrivateRoutes';
 
 /**
  * @export
@@ -15,11 +21,25 @@ import PublicRoutes from './PublicRoutes';
  * Routes
  */
 function Routes() {
-  const { isAuthenticated } = useAuth();
-
   return (
     <BrowserRouter>
-      {isAuthenticated ? <PrivateRoutes /> : <PublicRoutes />}
+      <Switch>
+        <Route path="/" exact component={SignIn} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
+
+        <PrivateRoute exact path="/journals" component={Journals} />
+
+        <PrivateRoute path="/journals/new" component={CreateJournal} />
+
+        <PrivateRoute
+          exact
+          component={JournalsList}
+          path="/journals/:journalId/"
+        />
+
+        <PrivateRoute path="/note/new/:journalId" component={CreateNote} />
+      </Switch>
     </BrowserRouter>
   );
 }

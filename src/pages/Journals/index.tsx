@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
@@ -26,12 +26,12 @@ import { Container, EmptyList, List } from './styles';
 function JournalsPage() {
   const [journals, setJournals] = useState<Journal[]>();
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const { user, signOut } = useAuth();
 
   const handleAddJournal = () => {
-    navigate('/journals/new');
+    history.push('/journals/new');
   };
 
   const getJournals = useCallback(() => {
