@@ -1,6 +1,8 @@
 import React from 'react';
-import { FaAngleLeft, FaPlus } from 'react-icons/fa';
+import { FaPlus } from 'react-icons/fa';
 import { Link, useHistory } from 'react-router-dom';
+
+import leftArrow from '../../assets/images/left-arrow.svg';
 
 import Button from '../Button';
 
@@ -31,7 +33,7 @@ function Navbar({
   return (
     <Container>
       <Link to={linkToBackButton}>
-        <FaAngleLeft />
+        <img src={leftArrow} alt="left arrow" />
 
         <div>{linkText}</div>
       </Link>

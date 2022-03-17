@@ -54,11 +54,11 @@ export const List = styled.ul`
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 
     width: 100%;
 
-    padding: 1rem;
+    padding: 1rem 0;
 
     max-height: 550px;
 
@@ -67,11 +67,7 @@ export const List = styled.ul`
     border-radius: 8px;
 
     a {
-      min-width: 110px;
-      max-width: 130px;
-      width: 100%;
-
-      margin: auto;
+      width: 144px;
 
       &:nth-child(odd) li {
         background: ${theme.colors.lightBlue};
@@ -113,7 +109,8 @@ export const List = styled.ul`
         flex: 1;
         padding: 0.8rem;
 
-        font-size: 1.1rem;
+        font-size: 24px;
+        font-weight: 700;
 
         text-align: center;
         word-break: break-all;
