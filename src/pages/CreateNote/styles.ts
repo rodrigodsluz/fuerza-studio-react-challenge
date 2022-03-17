@@ -23,9 +23,9 @@ export const Container = styled.main`
       margin: auto;
       margin-top: 2rem;
 
-      padding: 8px;
+      padding-right: 8px;
 
-      width: 90%;
+      width: 100%;
 
       input {
         padding: 0.4rem;

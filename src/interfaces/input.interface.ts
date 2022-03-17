@@ -3,4 +3,5 @@ export interface IInput {
   value?: string;
   setValue?: React.Dispatch<React.SetStateAction<string>>;
   label: string;
+  type?: string;
 }

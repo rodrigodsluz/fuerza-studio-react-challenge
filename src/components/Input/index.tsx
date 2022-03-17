@@ -12,7 +12,7 @@ import { InputContainer } from './styles';
  * @description
  * Input
  */
-function Input({ id, value, setValue, label }: IInput) {
+function Input({ id, value, setValue, label, type }: IInput) {
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (setValue) {
       setValue(e.target.value);
@@ -25,7 +25,12 @@ function Input({ id, value, setValue, label }: IInput) {
         document.getElementById(id)?.focus();
       }}
     >
-      <input id={id} type="text" value={value} onChange={handleOnChange} />
+      <input
+        id={id}
+        type={type || 'text'}
+        value={value}
+        onChange={handleOnChange}
+      />
 
       <label htmlFor={id}>{label}</label>
     </InputContainer>

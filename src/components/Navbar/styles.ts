@@ -14,7 +14,12 @@ export const Container = styled.nav`
       justify-content: center;
 
       font-family: ${theme.fonts.family.secondary};
-      font-size: 1.5rem;
+      font-size: 25px;
+      font-weight: 700;
+
+      img {
+        margin-right: 19px;
+      }
 
       div {
         width: 100px;

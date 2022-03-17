@@ -61,6 +61,7 @@ function Form({
           id="password"
           setValue={setPassword}
           label={passwordLabel}
+          type="password"
         />
 
         {hasForgotPassword && <Link to="/">Forgot Password?</Link>}

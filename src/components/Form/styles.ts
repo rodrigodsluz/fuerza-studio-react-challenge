@@ -24,9 +24,9 @@ export const Container = styled.main`
     > a:nth-child(3) {
       grid-area: link;
 
-      margin: auto auto 8px;
+      margin: auto auto 6px;
 
-      font-size: 1rem;
+      font-size: 12px;
       font-weight: 600;
 
       text-decoration: underline;
@@ -42,7 +42,7 @@ export const Container = styled.main`
       grid-area: title;
 
       font-weight: 400;
-      font-size: 2.4rem;
+      font-size: 32px;
 
       color: ${theme.colors.brown};
 
